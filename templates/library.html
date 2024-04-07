@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library</title>
+</head>
+<body>
+    <h1>hello world it is library page</h1>
+    <form>
+        {% csrf_token %}
+        <input type="search" value="{{search}}" name="search" placeholder="search">
+        <button type="submit">Search</button>
+    </form>
+    <h2>Books;</h2>
+    <ul>
+        {% for book in books %}
+        <li>
+            <b><a href="{% url 'book-detail' book.id %}">Id: {{ book.id }} Title: {{ book.title }}</a></b>
+        </li>
+    {% endfor %}
+    </ul>
+
+
+
+
+    <a href="{% url 'landing' %}"> Back</a>
+</body>
+</html>

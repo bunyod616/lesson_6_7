@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>studdeent</title>
+</head>
+<body>
+    <h1>hello world it is student page</h1>
+    <form>
+        {% csrf_token %}
+        <input type="search" value="{{search}}" name="search" placeholder="search">
+        <button type="submit">Search</button>
+    </form>
+    <h2>Students;</h2>
+    <ul>
+        {% for talaba in talabalar %}
+        <li>
+            <b><a href="">{{talaba.first_name }} {{talaba.last_name }} </a></b>
+        </li>
+    {% endfor %}
+    </ul>
+
+
+    <a href="{% url 'landing' %}"> Back</a>
+</body>
+</html>

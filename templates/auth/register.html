@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .register{
+            width: 300px;
+            height: 390px;
+            border: 1px solid black;
+
+        }
+        .register>form{
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+        input{
+            margin: 10px;
+        }
+        button{
+            width: 50px;
+
+            background: #4ac1f7;
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Register page</h1>
+    <div class="register">
+        <form method="POST">
+            {% csrf_token %}
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" placeholder="First name" name="first_name">
+
+             <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" placeholder="Last name" name="last_name">
+
+             <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Email" name="email">
+
+             <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Username" name="username">
+
+             <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Password" name="password_1">
+
+            <label for="password">Reset Password:</label>
+            <input type="password" id="reset_password" placeholder="Reset Password" name="password_2">
+
+            <button type="submit">Click</button>
+
+            <a href="{% url 'landing' %}"> Landing</a>
+        </form>
+    </div>
+</body>
+</html>

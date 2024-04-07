@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>University</title>
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: #E0E2EE;
+        }
+        .landing_p{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px;
+            background: #3c6d79;
+            color: #f9ae65;
+        }
+        .view>a{
+            color: black;
+            font-size: 20px;
+            margin: 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="landing_p">
+        <h1>Hello world this is landing page</h1>
+        <div class="view">
+            <a href="{% url 'library' %}"> Library</a>
+            <a href="{% url 'student' %}"> Student</a>
+            <a href="{% url 'register' %}"> Register</a>
+            <a href="{% url 'login' %}"> Login</a>
+        </div>
+    </div>
+</body>
+</html>

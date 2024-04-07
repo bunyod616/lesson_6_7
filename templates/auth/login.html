@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+     <style>
+        .login{
+            width: 200px;
+            height: 150px;
+            border: 1px solid black;
+            padding: 10px;
+        }
+        .register>form{
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+        input{
+            margin: 10px;
+        }
+        button{
+            width: 50px;
+            background: #4ac1f7;
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Login Page</h1>
+
+    <div class="login">
+        <form method="POST">
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="username" name="username">
+
+             <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Password" name="password">
+
+            <button type="submit">Click</button>
+            <a href="{% url 'login' %}"> Sign UP</a>
+        </form>
+    </div>
+</body>
+</html>
